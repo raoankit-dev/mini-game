@@ -1,0 +1,269 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #1B211A;
+}
+
+body {
+    min-height: 100vh;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    color: #7bad44;
+    background-color: #1B211A;
+    user-select: none;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(16rem, 2fr) minmax(0, 3fr);
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+}
+
+.same-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 0;
+}
+
+.box3 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+}
+
+.wraper2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.man-in-middle {
+    position: absolute;
+    top: -8rem;
+    width: clamp(12rem, 20vw, 19rem);
+    max-width: 100%;
+}
+
+.heading {
+    position: absolute;
+    top: 2.4rem;
+    z-index: 1;
+    max-width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    text-align: center;
+}
+
+.winer {
+    position: absolute;
+    top: 5.3rem;
+    z-index: 1;
+    max-width: 100%;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: 700;
+    text-align: center;
+}
+
+.score {
+    position: absolute;
+    bottom: 4.3rem;
+    max-width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(1.1rem, 2.2vw, 1.7rem);
+    text-align: center;
+}
+
+.place {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min(250px, 80%);
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.place img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.wraper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 0;
+}
+
+.choice {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+    width: 80%;
+    height: 10rem;
+}
+
+.choice img {
+    width: clamp(2.5rem, 5vw, 5rem);
+    max-width: 30%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.user {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .choice img:hover {
+        transform: translateY(-2px) scale(1.1);
+    }
+}
+
+@media (max-width: 760px) {
+    .main {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-rows: minmax(14rem, 0svh) minmax(17rem, 1fr);
+        overflow: visible;
+        background-color: antiquewhite;
+    }
+
+    .box3 {
+        /* max-height: 5rem; */
+        grid-column: 1 / -1;
+        grid-row: 1;
+        /* background-color: aliceblue; */
+    }
+
+    .box1 {
+        grid-column: 1;
+        grid-row: 2;
+        /* background-color: antiquewhite; */
+    }
+
+    .box2 {
+        grid-column: 2;
+        grid-row: 2;
+        /* background-color: aquamarine; */
+    }
+
+    .man-in-middle {
+        display: none;
+        top: -2rem;
+        width: clamp(9rem, 28vw, 13rem);
+    }
+
+    .heading {
+        top: 0.8rem;
+        font-size: clamp(1.5rem, 3.5vw, 1.1rem);
+    }
+
+    .winer {
+        color: rgba(255, 34, 0, 0.575);
+        top: 2.7rem;
+        font-size: clamp(2rem, 4vw, 1.35rem);
+    }
+
+    .score {
+        font-weight: 700;
+        bottom: 0.8rem;
+        font-size: clamp(1.6rem, 4vw, 1.4rem);
+    }
+
+    .score span{
+        font-size: larger;
+    }
+
+    .place {
+        width: min(34vw, 170px);
+        max-height: 30%;
+    }
+
+    .choice {
+        width: 300px;
+        height: auto;
+        gap: 0.2rem;
+    }
+
+    .comoption {
+        display: none;
+    }
+
+    .choice img {
+        width: clamp(3rem, 9vw, 3.5rem);
+    }
+
+    .user {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+    }
+
+    .wraper {
+        position: relative;
+    }
+
+    .user-heading {
+        position: absolute;
+        top: -16rem;
+    }
+
+    .com-heading {
+        position: absolute;
+        top: -16rem;
+    }
+
+    .user-choice {
+        position: absolute;
+        left: 3rem;
+        bottom: 2rem;
+    }
+
+}
+
+@media (max-width: 380px) {
+    .main {
+        grid-template-rows: minmax(13rem, 38svh) minmax(16rem, 1fr);
+    }
+
+    .place {
+        width: 36vw;
+    }
+
+    .choice img {
+        width: clamp(1.8rem, 8vw, 2.6rem);
+    }
+}
+
+@media (max-height: 500px) and (min-width: 761px) {
+    .main {
+        min-height: 500px;
+    }
+}
